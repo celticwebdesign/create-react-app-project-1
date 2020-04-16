@@ -1,0 +1,140 @@
+.News {
+	text-align: center;
+	/* height: 92vh; */
+	background: #fff;
+	min-height: 92vh;
+	display: flex;
+}
+
+.News .container {
+	min-height: 100%;
+	background: #eee;
+}
+
+.News ul.feeds {
+	padding: 10px 0;
+	margin: 0;
+	list-style: none;
+
+	li {
+		padding: 10px 0;
+		border-bottom: 1px dashed #aaa;
+		text-align: left;
+
+		.publishedAt {
+		}
+		.urlToImage {
+			img {
+				max-width: 200px;
+			}
+		}
+
+		.description {
+			padding: 10px 0 0;
+		}
+
+		.content {
+			display: none;
+			padding: 10px 0 0;
+		}
+		.content.show {
+			display: block;
+		}
+		button.read_more {
+			display: block;
+			margin-top: 10px;
+		}
+	}
+}
+
+/*
+to do:
+
+DONE - sass
+DONE - show photo
+DONE - extend css down the page
+DONE - open window to view story
+separately move to second page to show story
+
+DONE - add navigation
+
+DONE - add second news api:
+https://contextualweb.io/news-api/
+https://rapidapi.com/contextualwebsearch/api/custom-search?endpoint=apiendpoint_51d86e03-3d5a-468a-9e2f-a3ff2a899442
+then
+DONE - button to get more news
+then
+		DONE - spinning gif?
+then
+	DONE - Do inner html bold tags.
+then
+	DONE - spinning gif on loading more news.
+then
+	DONE - sticky header.
+then
+	DONE - Add BootStrap.
+then
+	DONE - Home screen meta tag, add to my homescreen to test, a web app.
+then
+	DONE - http password.
+then
+attempt to merge multiple news queries together ???
+
+then
+	DONE - after adding pages, add mmenu.
+then
+	DONE - add header with logo and mmenu.
+then
+add scss variables.
+then
+add text field for user to enter search term.
+then
+localStorage to store previous search terms.
+then
+autocomplete search text field for easier previous term finder.
+then
+GraphQL, take news from onLondon ?
+
+	DONE - HTML5 camera access?
+Once working, convert to React Native?
+
+This is a test change.
+
+	Use GitHub for the remote repo to then allow for
+	GitHub pages:
+	https://create-react-app.dev/docs/deployment/  #GitHub Pages
+	https://pages.github.com
+
+Read React Wordpress url page on iPad.
+
+https://randomuser.me/
+
+https://rapidapi.com/twilio/api/twilio-sms
+
+https://rapidapi.com/sendgrid/api/sendgrid
+
+https://rapidapi.com/fcambus/api/telize
+
+https://rapidapi.com/collection/best-free-apis
+
+Words:
+https://rapidapi.com/dpventures/api/wordsapi
+https://rapidapi.com/blog/build-a-dictionary-app-with-the-wordsapi/
+
+See what other APIs are avialable on rapidAPI
+
+JSONBin
+JSONbin: a personal RESTful API service
+See email from Chris Ferdinandi on 06/04/2020, OAuth authenication.
+
+see Harvard videos for different development website sandboxio ? + one other.
+
+weather api?
+twillio api?
+uptimerobobt api?
+
+Free APIs:
+https://rapidapi.com/collection/best-free-apis
+
+React Native ?
+*/

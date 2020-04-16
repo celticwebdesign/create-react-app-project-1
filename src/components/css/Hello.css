@@ -1,0 +1,17 @@
+.Hello {
+	text-align: center;
+	height: 96vh;
+	background: #fff;
+}
+
+.Hello .container {
+	height: 100%;
+	background: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Hello .message {
+	/* background: #ccc; */
+}

@@ -1,0 +1,14 @@
+.App {
+  /* text-align: center; */
+}
+
+.App .container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: 1px dashed #f00;
+  border-right: 1px dashed #f00;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
