@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Switch,
 	Route,
 	Redirect,
@@ -28,7 +28,7 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<Router basename="create-react-app-project-1/">
+			<Router basename="/">
 				<div className="App">
 					<CheeseburgerMenu
 						isOpen={this.state.menuOpen}
