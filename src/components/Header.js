@@ -27,7 +27,7 @@ const Header = props => {
                     className="HamburgerMenu"
                 />
                 <div className="logo">
-                   Logo here
+                    <Link to="./">Logo here</Link>
                 </div>
             </div>
         </header>
