@@ -22,7 +22,7 @@ const Header = (props) => {
 					className="HamburgerMenu"
 				/>
 				<div className="logo">
-					<Link to="./">A Logo here</Link>
+					<Link to="./">1 A Logo here</Link>
 				</div>
 			</div>
 		</header>
