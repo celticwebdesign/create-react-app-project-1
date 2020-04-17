@@ -3,7 +3,7 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Redirect
+	Redirect,
 } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
@@ -18,7 +18,7 @@ import CameraApp from "./components/CameraApp";
 class App extends Component {
 	state = {
 		welcome: "Hello To You",
-		menuOpen: false
+		menuOpen: false,
 	};
 	openMenu() {
 		this.setState({ menuOpen: true });
@@ -28,7 +28,7 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<Router>
+			<Router basename="create-react-app-project-1/">
 				<div className="App">
 					<CheeseburgerMenu
 						isOpen={this.state.menuOpen}
@@ -40,10 +40,8 @@ class App extends Component {
 					</CheeseburgerMenu>
 					<Header
 						state={this.state}
-						openMenu = {
-							this.openMenu.bind(this)
-						}
-						/>
+						openMenu={this.openMenu.bind(this)}
+					/>
 					<Switch>
 						{/* <Route exact path="/" render={() => <News />} /> */}
 						<Route
