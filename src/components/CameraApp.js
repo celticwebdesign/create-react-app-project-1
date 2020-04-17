@@ -6,7 +6,7 @@ import "./css/CameraApp.scss";
 
 class CameraApp extends Component {
 	state = {
-		photos: [],
+		photos: []
 	};
 	handleTakePhoto = (dataUri) => {
 		// console.log("takePhoto 111");
@@ -18,6 +18,10 @@ class CameraApp extends Component {
 		console.log(this.state.photos);
 
 		// save photos to localstorage
+	};
+	handleCameraError = (error) => {
+		// console.log('handleCameraError', error);
+		// console.dir(error);
 	};
 	deletePhoto = (e) => {
 		const photos = [...this.state.photos];
@@ -32,11 +36,11 @@ class CameraApp extends Component {
 				<div className="container">
 					{/* Show previous photos */}
 					<ul className="feeds">
-						{this.state.photos < 1 && (
+						{/* {this.state.photos < 1 && this.state.allow_camera && (
 							<li className="empty" key="empty">
 								Take a photo
 							</li>
-						)}
+						)} */}
 						{this.state.photos.map((post, index) => {
 							return (
 								<li className="photo" key={index}>
@@ -58,6 +62,9 @@ class CameraApp extends Component {
 					<Camera
 						onTakePhoto={(dataUri) => {
 							this.handleTakePhoto(dataUri);
+						}}
+						onCameraError={(error) => {
+							this.handleCameraError(error);
 						}}
 					/>
 					{/* Cammera */}
