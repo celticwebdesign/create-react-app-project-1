@@ -86,114 +86,112 @@ class RandomUser extends Component {
 				<div className="RandomUser">
 					<div className="container">
 						<ul className="feeds">
-							{
-							this.state.RandomUser.map((post, index) => {
-								const d = new Date(Date.parse(post.dob.date));
-								console.dir(d);
-								const months = [
-									"January",
-									"February",
-									"March",
-									"April",
-									"May",
-									"June",
-									"July",
-									"August",
-									"September",
-									"October",
-									"November",
-									"December"
-								];
-								const date =
-									d.getDate() +
+	{
+	this.state.RandomUser.map((post, index) => {
+		const d = new Date(Date.parse(post.dob.date));
+		const months = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		];
+		const date =
+			d.getDate() +
+			" " +
+			months[d.getMonth()] +
+			" " +
+			d.getFullYear();
+		return (
+			<li key={index}>
+				<article>
+					<Card>
+						<Card.Body>
+							<Card.Title>
+								{
+									post.name.title +
 									" " +
-									months[d.getMonth()] +
+									post.name.first +
 									" " +
-									d.getFullYear();
-								return (
-									<li key={index}>
-										<article>
-											<Card>
-												<Card.Body>
-													<Card.Title>
-														<a
-															href={post.url}
-															target="_blank"
-															rel="noopener noreferrer"
-															dangerouslySetInnerHTML={{
-																__html: post.title
-															}}
-														></a>
-													</Card.Title>
-													<Card.Text>
-														<span className="dob">
-															{date}
-														</span>
-														{/* {post.image.url && (
-															<span className="urlToImage">
-																<img
-																	src={
-																		post.image
-																			.url
-																	}
-																	alt={post.title}
-																/>
-															</span>
-														)} */}
-														{post.description ? (
-															<span
-																className="description"
-																dangerouslySetInnerHTML={{
-																	__html:
-																		post.description
-																			.split(
-																				" "
-																			)
-																			.splice(
-																				0,
-																				10
-																			)
-																			.join(
-																				" "
-																			) +
-																		"..."
-																}}
-															></span>
-														) : (
-															""
-														)}
-														{post.body ? (
-															<span
-																className="content"
-																id={
-																	index +
-																	"_feed_content"
-																}
-																dangerouslySetInnerHTML={{
-																	__html:
-																		post.body
-																}}
-															></span>
-														) : (
-															""
-														)}
-													</Card.Text>
-													{/* <Button
-														variant="primary"
-														size="sm"
-														className="read_more"
-														onClick={() =>
-															// this.showMoreNews(index)
-														}
-													>
-														Read More
-													</Button> */}
-												</Card.Body>
-											</Card>
-										</article>
-									</li>
-								);
-							})}
+									post.name.last
+								}
+							</Card.Title>
+							<Card.Text>
+								<span className="dob">
+									{date}
+								</span>
+								{/* {post.image.url && (
+									<span className="urlToImage">
+										<img
+											src={
+												post.image
+													.url
+											}
+											alt={post.title}
+										/>
+									</span>
+								)} */}
+								{post.description ? (
+									<span
+										className="description"
+										dangerouslySetInnerHTML={{
+											__html:
+												post.description
+													.split(
+														" "
+													)
+													.splice(
+														0,
+														10
+													)
+													.join(
+														" "
+													) +
+												"..."
+										}}
+									></span>
+								) : (
+									""
+								)}
+								{post.body ? (
+									<span
+										className="content"
+										id={
+											index +
+											"_feed_content"
+										}
+										dangerouslySetInnerHTML={{
+											__html:
+												post.body
+										}}
+									></span>
+								) : (
+									""
+								)}
+							</Card.Text>
+							{/* <Button
+								variant="primary"
+								size="sm"
+								className="read_more"
+								onClick={() =>
+									// this.showMoreNews(index)
+								}
+							>
+								Read More
+							</Button> */}
+						</Card.Body>
+					</Card>
+				</article>
+			</li>
+		);
+	})}
 						</ul>
 						{/* <div id="load_more">
 							<Button
