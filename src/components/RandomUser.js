@@ -10,7 +10,7 @@ class RandomUser extends Component {
 		RandomUser: [],
 		// api_loaded: false,
 		// pageNumber: 1,
-		renderSplashscreen: true
+		renderSplashscreen: true,
 	};
 	// toggleSpinnerLoading = () => {
 	// 	// show lower SpinnerLoading only on loading of more news
@@ -20,25 +20,28 @@ class RandomUser extends Component {
 	// 	);
 	// 	spinnerLoading[0].classList.toggle("show");
 	// };
-	getNews = update => {
+	getNews = (update) => {
 		// 'update': informs getNews that this is subsequent loading of news
 
 		// Postman App
 
 		var myHeaders = new Headers();
-		myHeaders.append("Cookie", "__cfduid=da715dd02f237cec0d012a432189a23021587202059");
+		myHeaders.append(
+			"Cookie",
+			"__cfduid=da715dd02f237cec0d012a432189a23021587202059"
+		);
 
 		var requestOptions = {
-			method: 'GET',
+			method: "GET",
 			headers: myHeaders,
-			redirect: 'follow'
+			redirect: "follow",
 		};
 
 		fetch("https://randomuser.me/api/?results=10", requestOptions)
-			.then(response => response.text())
+			.then((response) => response.text())
 			.then(
 				// result => console.log(result);
-				result => {
+				(result) => {
 					const json_results = JSON.parse(result);
 					// console.dir(json_results.results);
 
@@ -48,13 +51,13 @@ class RandomUser extends Component {
 							json_results.results
 						), // an array of objects
 						// api_loaded: true,
-						renderSplashscreen: false
+						renderSplashscreen: false,
 					});
 
 					console.dir(this.state);
 				}
 			)
-			.catch(error => console.log('error', error));
+			.catch((error) => console.log("error", error));
 
 		// Postman App
 	};
@@ -80,54 +83,60 @@ class RandomUser extends Component {
 	render() {
 		if (this.state.renderSplashscreen) {
 			return <SplashScreen />;
-		}
-		else {
+		} else {
 			return (
 				<div className="RandomUser">
 					<div className="container">
 						<ul className="feeds">
-	{
-	this.state.RandomUser.map((post, index) => {
-		const d = new Date(Date.parse(post.dob.date));
-		const months = [
-			"January",
-			"February",
-			"March",
-			"April",
-			"May",
-			"June",
-			"July",
-			"August",
-			"September",
-			"October",
-			"November",
-			"December"
-		];
-		const date =
-			d.getDate() +
-			" " +
-			months[d.getMonth()] +
-			" " +
-			d.getFullYear();
-		return (
-			<li key={index}>
-				<article>
-					<Card>
-						<Card.Body>
-							<Card.Title>
-								{
-									post.name.title +
+							{this.state.RandomUser.map((post, index) => {
+								const d = new Date(Date.parse(post.dob.date));
+								const months = [
+									"January",
+									"February",
+									"March",
+									"April",
+									"May",
+									"June",
+									"July",
+									"August",
+									"September",
+									"October",
+									"November",
+									"December",
+								];
+								const date =
+									d.getDate() +
 									" " +
-									post.name.first +
+									months[d.getMonth()] +
 									" " +
-									post.name.last
-								}
-							</Card.Title>
-							<Card.Text>
-								<span className="dob">
-									{date}
-								</span>
-								{/* {post.image.url && (
+									d.getFullYear();
+								return (
+									<li key={index}>
+										<article>
+											<Card>
+												<Card.Body>
+													<Card.Title>
+														{post.name.title +
+															" " +
+															post.name.first +
+															" " +
+															post.name.last}
+													</Card.Title>
+													<Card.Text>
+														<span className="gender">
+															{post.gender}
+														</span>
+														<span className="dob">
+															{date}
+														</span>
+														<span className="email">
+															<a
+																href={`mailto:${post.email}`}
+															>
+																{post.email}
+															</a>
+														</span>
+														{/* {post.image.url && (
 									<span className="urlToImage">
 										<img
 											src={
@@ -138,45 +147,45 @@ class RandomUser extends Component {
 										/>
 									</span>
 								)} */}
-								{post.description ? (
-									<span
-										className="description"
-										dangerouslySetInnerHTML={{
-											__html:
-												post.description
-													.split(
-														" "
-													)
-													.splice(
-														0,
-														10
-													)
-													.join(
-														" "
-													) +
-												"..."
-										}}
-									></span>
-								) : (
-									""
-								)}
-								{post.body ? (
-									<span
-										className="content"
-										id={
-											index +
-											"_feed_content"
-										}
-										dangerouslySetInnerHTML={{
-											__html:
-												post.body
-										}}
-									></span>
-								) : (
-									""
-								)}
-							</Card.Text>
-							{/* <Button
+														{post.description ? (
+															<span
+																className="description"
+																dangerouslySetInnerHTML={{
+																	__html:
+																		post.description
+																			.split(
+																				" "
+																			)
+																			.splice(
+																				0,
+																				10
+																			)
+																			.join(
+																				" "
+																			) +
+																		"...",
+																}}
+															></span>
+														) : (
+															""
+														)}
+														{post.body ? (
+															<span
+																className="content"
+																id={
+																	index +
+																	"_feed_content"
+																}
+																dangerouslySetInnerHTML={{
+																	__html:
+																		post.body,
+																}}
+															></span>
+														) : (
+															""
+														)}
+													</Card.Text>
+													{/* <Button
 								variant="primary"
 								size="sm"
 								className="read_more"
@@ -186,12 +195,12 @@ class RandomUser extends Component {
 							>
 								Read More
 							</Button> */}
-						</Card.Body>
-					</Card>
-				</article>
-			</li>
-		);
-	})}
+												</Card.Body>
+											</Card>
+										</article>
+									</li>
+								);
+							})}
 						</ul>
 						{/* <div id="load_more">
 							<Button
