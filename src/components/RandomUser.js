@@ -136,17 +136,27 @@ class RandomUser extends Component {
 																{post.email}
 															</a>
 														</span>
-														{/* {post.image.url && (
-									<span className="urlToImage">
-										<img
-											src={
-												post.image
-													.url
-											}
-											alt={post.title}
-										/>
-									</span>
-								)} */}
+														{post.picture
+															.medium && (
+															<span className="urlToImage">
+																<img
+																	src={
+																		post
+																			.picture
+																			.medium
+																	}
+																	alt={
+																		post
+																			.name
+																			.first +
+																		" " +
+																		post
+																			.name
+																			.last
+																	}
+																/>
+															</span>
+														)}
 														{post.description ? (
 															<span
 																className="description"
@@ -186,15 +196,15 @@ class RandomUser extends Component {
 														)}
 													</Card.Text>
 													{/* <Button
-								variant="primary"
-								size="sm"
-								className="read_more"
-								onClick={() =>
-									// this.showMoreNews(index)
-								}
-							>
-								Read More
-							</Button> */}
+		variant="primary"
+		size="sm"
+		className="read_more"
+		onClick={() =>
+			// this.showMoreNews(index)
+		}
+	>
+		Read More
+	</Button> */}
 												</Card.Body>
 											</Card>
 										</article>
