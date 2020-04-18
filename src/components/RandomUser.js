@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import SpinnerLoading from "./SpinnerLoading";
-// import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import SplashScreen from "./SplashScreen";
 import "./css/RandomUser.scss";
@@ -20,6 +20,22 @@ class RandomUser extends Component {
 	// 	);
 	// 	spinnerLoading[0].classList.toggle("show");
 	// };
+	mapsSelector = (lat, long) => {
+		// https://medium.com/@colinlord/opening-native-map-apps-from-the-mobile-browser-afd66fbbb8a4
+		// https://codepen.io/colinlord/pen/jWbELE
+		if (
+			/* if we're on iOS, open in Apple Maps */
+			navigator.platform.indexOf("iPhone") !== -1 ||
+			navigator.platform.indexOf("iPod") !== -1 ||
+			navigator.platform.indexOf("iPad") !== -1 ||
+			navigator.platform.indexOf("Mac") !== -1
+		)
+			window.open(`http://maps.apple.com/?q=${lat},${long}`);
+		/* else use Google */ else
+			window.open(
+				`https://www.google.com/maps/search/?api=1&query=${lat},${long}`
+			);
+	};
 	getNews = (update) => {
 		// 'update': informs getNews that this is subsequent loading of news
 
@@ -54,7 +70,7 @@ class RandomUser extends Component {
 						renderSplashscreen: false,
 					});
 
-					console.dir(this.state);
+					// console.dir(this.state);
 				}
 			)
 			.catch((error) => console.log("error", error));
@@ -157,54 +173,85 @@ class RandomUser extends Component {
 																/>
 															</span>
 														)}
-														{post.description ? (
-															<span
-																className="description"
-																dangerouslySetInnerHTML={{
-																	__html:
-																		post.description
-																			.split(
-																				" "
-																			)
-																			.splice(
-																				0,
-																				10
-																			)
-																			.join(
-																				" "
-																			) +
-																		"...",
-																}}
-															></span>
-														) : (
-															""
-														)}
-														{post.body ? (
-															<span
-																className="content"
-																id={
-																	index +
-																	"_feed_content"
+														<span className="location">
+															<span className="street">
+																{post.location
+																	.street
+																	.number +
+																	" " +
+																	post
+																		.location
+																		.street
+																		.name}
+															</span>
+															<span className="city">
+																{
+																	post
+																		.location
+																		.city
 																}
-																dangerouslySetInnerHTML={{
-																	__html:
-																		post.body,
-																}}
-															></span>
-														) : (
-															""
-														)}
+															</span>
+															<span className="state">
+																{
+																	post
+																		.location
+																		.state
+																}
+															</span>
+															<span className="country">
+																{
+																	post
+																		.location
+																		.country
+																}
+															</span>
+															<span className="postcode">
+																{
+																	post
+																		.location
+																		.postcode
+																}
+															</span>
+															<span className="coordinates">
+																{/*
+																Kept here as RandomUser API returns coordinates in the ocean
+																<a
+																	href={`https://www.google.com/maps/search/?api=1&query=${post.location.coordinates.latitude},${post.location.coordinates.longitude}`}
+																>
+																	Map
+																</a> */}
+																{/*
+																Kept here as an example of how to use a link
+																<a href="https://www.google.com/maps/search/?api=1&query=28.6139,77.2090">
+																I am using these coordinates below simply to have a live map and pin.
+																	Map
+																</a> */}
+																<Button
+																	variant="primary"
+																	size="sm"
+																	className="read_more"
+																	onClick={() =>
+																		this.mapsSelector(
+																			28.6139,
+																			77.209
+																		)
+																	}
+																>
+																	Maps
+																</Button>
+															</span>
+														</span>
 													</Card.Text>
 													{/* <Button
-		variant="primary"
-		size="sm"
-		className="read_more"
-		onClick={() =>
-			// this.showMoreNews(index)
-		}
-	>
-		Read More
-	</Button> */}
+														variant="primary"
+														size="sm"
+														className="read_more"
+														onClick={() =>
+															// this.showMoreNews(index)
+														}
+													>
+														Read More
+													</Button> */}
 												</Card.Body>
 											</Card>
 										</article>

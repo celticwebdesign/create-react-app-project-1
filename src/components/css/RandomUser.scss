@@ -39,19 +39,27 @@
 						max-width: 200px;
 					}
 				}
+				.location {
+					.street {
+						display: block;
+					}
+					.city {
+						display: block;
+					}
+					.state {
+						display: block;
+					}
+					.country {
+						display: block;
+					}
+					.postcode {
+						display: block;
+					}
+					.coordinates {
+						display: block;
+					}
+				}
 
-				// .description {
-				// 	display: block;
-				// 	padding: 10px 0 0;
-				// }
-
-				// .content {
-				// 	display: none;
-				// 	padding: 10px 0 0;
-				// }
-				// .content.show {
-				// 	display: block;
-				// }
 				// button.read_more {
 				// 	display: block;
 				// 	margin-top: 10px;
