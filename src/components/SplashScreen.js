@@ -5,7 +5,7 @@ import logo from './img/logo.svg';
 const SplashScreen = () => {
 
 	return (
-		<div class="SplashScreen">
+		<div className="SplashScreen">
 			<img src={logo} alt="SplashScreen"/>
 		</div>
 	);
