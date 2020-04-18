@@ -36,11 +36,11 @@ class CameraApp extends Component {
 				<div className="container">
 					{/* Show previous photos */}
 					<ul className="feeds">
-						{/* {this.state.photos < 1 && this.state.allow_camera && (
+						{this.state.photos < 1 && (
 							<li className="empty" key="empty">
 								Take a photo
 							</li>
-						)} */}
+						)}
 						{this.state.photos.map((post, index) => {
 							return (
 								<li className="photo" key={index}>
