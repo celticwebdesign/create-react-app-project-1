@@ -1,0 +1,89 @@
+.RandomUser {
+	text-align: center;
+	/* height: 92vh; */
+	background: #fff;
+	min-height: 92vh;
+	display: flex;
+
+	ul.feeds {
+		padding: 10px 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			margin: 10px 0;
+			text-align: left;
+
+			article {
+				header.article-title {
+					h2 {
+						margin: 0 0 10px;
+						font-weight: 400;
+						a {
+						}
+					}
+				}
+				.gender {
+					display: block;
+					text-transform: capitalize;
+				}
+				.dob {
+					display: block;
+				}
+				.email {
+					display: block;
+				}
+				.urlToImage {
+					display: block;
+					img {
+						max-width: 200px;
+					}
+				}
+				.location {
+					.street {
+						display: block;
+					}
+					.city {
+						display: block;
+					}
+					.state {
+						display: block;
+					}
+					.country {
+						display: block;
+					}
+					.postcode {
+						display: block;
+					}
+					.coordinates {
+						display: block;
+					}
+				}
+
+				// button.read_more {
+				// 	display: block;
+				// 	margin-top: 10px;
+				// }
+			}
+		}
+	}
+}
+
+// .NewsSearchAPI .container {
+// 	min-height: 100%;
+// 	background: #eee;
+// }
+
+// .RandomUser
+// 	}
+
+// 	#load_more {
+// 		.spinnerLoading {
+// 			display: none;
+
+// 			&.show {
+// 				display: block;
+// 			}
+// 		}
+// 	}
+// }

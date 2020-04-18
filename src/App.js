@@ -3,7 +3,7 @@ import {
 	HashRouter as Router,
 	Switch,
 	Route,
-	Redirect,
+	// Redirect,
 } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
@@ -14,6 +14,7 @@ import NotFound from "./components/NotFound";
 import CheeseburgerMenu from "cheeseburger-menu";
 import MenuContent from "./components/MenuContent";
 import CameraApp from "./components/CameraApp";
+import RandomUser from "./components/RandomUser";
 
 class App extends Component {
 	state = {
@@ -65,6 +66,11 @@ class App extends Component {
 							exact
 							path="/camera"
 							render={() => <CameraApp />}
+						/>
+						<Route
+							exact
+							path="/randomuser"
+							render={() => <RandomUser />}
 						/>
 						<Route component={NotFound} />
 					</Switch>
