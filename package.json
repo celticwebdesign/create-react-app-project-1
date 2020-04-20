@@ -10,7 +10,6 @@
 		"bootstrap": "^4.4.1",
 		"cheeseburger-menu": "0.0.13",
 		"gh-pages": "^2.2.0",
-		"instafeed.js": "^1.4.1",
 		"newsapi": "^2.4.0",
 		"node-sass": "^4.13.1",
 		"react": "^16.13.1",
@@ -18,11 +17,9 @@
 		"react-dom": "^16.13.1",
 		"react-hamburger-menu": "^1.2.0",
 		"react-html5-camera-photo": "^1.5.4",
-		"react-instafeed": "^1.0.0",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.4.1",
-		"react-simple-storage": "^1.4.2",
-		"use-abortable-fetch": "^2.6.11"
+		"react-simple-storage": "^1.4.2"
 	},
 	"scripts": {
 		"predeploy": "npm run build",

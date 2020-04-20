@@ -15,7 +15,6 @@ import CheeseburgerMenu from "cheeseburger-menu";
 import MenuContent from "./components/MenuContent";
 import CameraApp from "./components/CameraApp";
 import RandomUser from "./components/RandomUser";
-import Instagram from "./components/Instagram";
 
 class App extends Component {
 	state = {
@@ -72,11 +71,6 @@ class App extends Component {
 							exact
 							path="/randomuser"
 							render={() => <RandomUser />}
-						/>
-						<Route
-							exact
-							path="/instagram"
-							render={() => <Instagram />}
 						/>
 						<Route component={NotFound} />
 					</Switch>

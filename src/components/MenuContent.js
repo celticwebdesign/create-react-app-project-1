@@ -10,7 +10,6 @@ class MenuContent extends Component {
 			{ i: 2, to: "./#/newssearchapi", title: "News Search API" },
 			{ i: 3, to: "./#/randomuser", title: "Random User" },
 			{ i: 4, to: "./#/camera", title: "Camera" },
-			{ i: 5, to: "./#/instagram", title: "Instagram" },
 		];
 
 		return (
