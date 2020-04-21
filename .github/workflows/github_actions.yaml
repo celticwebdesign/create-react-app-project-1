@@ -20,4 +20,5 @@ jobs:
 
             - name: Run deploy script
               run: |
+                  git config --global user.name "celticwebdesign" && git config --global user.email "darren.stevens@celticwebdesign.net"
                   npm run deploy
