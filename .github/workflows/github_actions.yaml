@@ -20,5 +20,5 @@ jobs:
 
             - name: Run deploy script
               run: |
-                  git config user.name "Darren Stevens" && git config user.email "webmaster@celticwebdesign.net"
+                  git config user.name "celticwebdesign" && git config user.email "darren.stevens@celticwebdesign.net"
                   npm run deploy
