@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Camera from "react-html5-camera-photo";
+import Camera, {
+	FACING_MODES
+} from "react-html5-camera-photo";
 import SimpleStorage from "react-simple-storage";
 import "react-html5-camera-photo/build/css/index.css";
 import "./css/CameraApp.scss";
@@ -66,6 +68,9 @@ class CameraApp extends Component {
 						onCameraError={(error) => {
 							this.handleCameraError(error);
 						}}
+						idealFacingMode = {
+							FACING_MODES.ENVIRONMENT
+						}
 					/>
 					{/* Cammera */}
 				</div>
