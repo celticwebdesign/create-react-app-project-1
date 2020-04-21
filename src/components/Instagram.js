@@ -98,6 +98,17 @@ class Instagram extends Component {
 																	fluid
 																/>
 															</a>
+															{caption.text ? (
+																<span
+																	className="caption"
+																	dangerouslySetInnerHTML={{
+																		__html:
+																			caption.text,
+																	}}
+																></span>
+															) : (
+																""
+															)}
 														</Card.Text>
 													</Card.Body>
 												</Card>
