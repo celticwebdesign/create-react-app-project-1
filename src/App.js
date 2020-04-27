@@ -16,6 +16,7 @@ import MenuContent from "./components/MenuContent";
 import CameraApp from "./components/CameraApp";
 import RandomUser from "./components/RandomUser";
 import Instagram from "./components/Instagram";
+import Graphql from "./components/Graphql";
 
 class App extends Component {
 	state = {
@@ -77,6 +78,11 @@ class App extends Component {
 							exact
 							path="/instagram"
 							render={() => <Instagram />}
+						/>
+						<Route
+							exact
+							path="/graphql"
+							render={() => <Graphql />}
 						/>
 						<Route component={NotFound} />
 					</Switch>
