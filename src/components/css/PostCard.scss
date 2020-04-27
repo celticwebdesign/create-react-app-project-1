@@ -1,0 +1,26 @@
+article {
+	.post-card {
+		.card-body {
+			.post-card__heading {
+				margin: 0 0 10px;
+				font-weight: 400;
+			}
+			.post-card__image {
+				display: block;
+				max-width: 200px;
+			}
+			.card-text {
+				.post-card__detail {
+					.post-card__label {
+						display: inline-block;
+						padding: 10px 0 0;
+					}
+				}
+			}
+			.read_more {
+				display: inline-block;
+				margin-top: 10px;
+			}
+		}
+	}
+}
