@@ -11,6 +11,7 @@ class MenuContent extends Component {
 			{ i: 3, to: "./#/randomuser", title: "Random User" },
 			{ i: 4, to: "./#/camera", title: "Camera" },
 			{ i: 5, to: "./#/instagram", title: "Instagram" },
+			{ i: 6, to: "./#/graphql", title: "Graphql Search" },
 		];
 
 		return (
